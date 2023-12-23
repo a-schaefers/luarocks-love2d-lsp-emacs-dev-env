@@ -3,10 +3,10 @@
 In following all of these arcane steps, I am able to:
 
 1. Switch lua and luarocks versions easily
-2. Have luarocks libraries be installed **per project**, instead of per user or per system.
+2. Have luarocks libraries be installed **per project**, instead of per user or per system
 3. Have CLI `lua` be able to find the luarocks project libraries
 3. Have `love .` also be able to find the luarocks project libraries
-4. Emacs / language-server-protocol is able to make use of both the luarocks project libraries and the love libraries for making solid completion options.
+4. Emacs / language-server-protocol is able to make use of both the luarocks project libraries and the love libraries for making solid completion options
 
 ## SETUP
 
