@@ -3,7 +3,7 @@ local lume = require("lume")
 local love = require("love")
 
 -- prove a luarocks lib works
-x = 7.77
+local x = 7.77
 print(lume.round(x))
 
 -- love .
