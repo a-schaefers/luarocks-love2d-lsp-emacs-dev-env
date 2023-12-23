@@ -61,8 +61,6 @@ Emacs from a separate terminal, which is going to provide the environment in to 
 
 - Install lua-language-server from source
 
-
-
 ```bash
 mkdir -p ~/repos
 cd ~/repos
@@ -91,6 +89,12 @@ exec "$HOME/repos/lua-language-server/bin/lua-language-server" "$@"
 Don't forget `chmod +x ~/bin/lua-language-server`
 
 Completely close both Emacs and the terminal. Restart emacs now from a new terminal, but don't forget to `luver use 5.1.5` in in the terminal before. Haha.
+
+- Install love
+
+```
+apt install love
+```
 
 - clone this repo
 
