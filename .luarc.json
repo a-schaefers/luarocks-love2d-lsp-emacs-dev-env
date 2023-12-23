@@ -2,22 +2,11 @@
     "completion": {
 	"callSnippet": "Both"
     },
-    // "runtime": {
-    //	// "path": [
-    //	//     "./?.lua",
-    //	//     "./lua_modules/share/lua/5.1/?.lua"
-    //	// ],
-    //	"version": "Lua 5.1"
-    // },
     "workspace": {
 	"library": [
 	    "lua_modules/share/lua/5.1",
 	    "~/repos/lua-language-server/meta/3rd/love2d/library/love.lua",
 	    "~/repos/lua-language-server/meta/3rd/love2d/library/love"
-	],
-	"ignoreDir": [
-	    ".**",
-	    "git"
 	],
 	"maxPreload" : 160000,
 	"preloadFileSize": 100000,
