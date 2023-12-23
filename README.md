@@ -1,15 +1,5 @@
 ## luarocks-love2d-lsp-emacs-dev-env
 
-Lua is the programming language.
-
-Luarocks is the lua package manager.
-
-Emacs is the editor.
-
-lua-language-server is the LSP protocol for e.g. linting, findef, and autocompletion.
-
-Love2d is a game engine.
-
 The goal of this setup is to provide the minimal skeleton to:
 
 - Get a lua + love project running with **per-project** managed deps by luarocks available on the PATH to both lua AND `love .`
@@ -23,8 +13,6 @@ The goal of this setup is to provide the minimal skeleton to:
 git clone https://github.com/a-schaefers/spartan-emacs.git ~/.emacs.d
 cp ~/.emacs.d/spartan-library/spartan-lua.el ~/.emacs.d/spartan.d # Enable the spartan-lua.el library.
 ```
-
-restart emacs
 
 - Setup luver (lua version manager)
 
@@ -46,6 +34,7 @@ Setup a lua version
 
 ```bash
 luver install 5.1.5
+luver use 5.1.5
 luver install luarocks 3.9.2
 ```
 
@@ -59,8 +48,7 @@ luver list-remote luarocks # see available luarocks vers
 So, one thing I found about `luver` is it does not remember your last selection. So what you must do is
 every time you want to work on a lua project, in the terminal first you should run: `luver use 5.1.5` for example.
 
-From there, go ahead and open up Emacs with that environment, for sanity, it'll just inherit that choice internally,
-which should help the LSP function correctly.
+From there, go ahead and open up Emacs with that environment, for sanity, for now.
 
 - Install lua-language-server from source
 
