@@ -2,11 +2,14 @@
 
 In following all of these arcane steps, I am able to:
 
-1. Switch lua and luarocks versions easily
-2. Have luarocks libraries be installed **per project**, instead of per user or per system
-3. Have CLI `lua` be able to find the luarocks project libraries
-3. Have `love .` also be able to find the luarocks project libraries
-4. Emacs / language-server-protocol is able to make use of both the luarocks project libraries and the love libraries for making solid completion options
+1. Switch lua and luarocks (package manager) versions easily
+2. Pin luarocks libs to a .rockspec file, and bootstrap it on another machine
+3. Have luarocks libraries be installed **per project**, instead of per user or per system
+4. Have CLI `lua` be able to find the luarocks project libraries
+5. Have `love .` also be able to find the luarocks project libraries
+6. Emacs / language-server-protocol is able to make use of both the luarocks project libraries and the love libraries for making solid completion options
+
+Emacs is the least relevant part of all this, it's just how *I* do it.
 
 ## SETUP
 
@@ -107,7 +110,7 @@ cd ~/repos/luarocks-love2d-lsp-emacs-dev-env
 luver use 5.1.5
 # From within the project root...
 luarocks install foo
-# ... update .rockspec file by hand ?!?! Luarocks is bad on this part, currently.
+# ... update .rockspec file by hand ?!?! Luarocks is bad on this part, currently. Seriously.
 emacs
 #  dev dev dev
 love . # run game
