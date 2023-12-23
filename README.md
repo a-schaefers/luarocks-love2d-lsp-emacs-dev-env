@@ -48,7 +48,10 @@ luver list-remote luarocks # see available luarocks vers
 So, one thing I found about `luver` is it does not remember your last selection. So what you must do is
 every time you want to work on a lua project, in the terminal first you should run: `luver use 5.1.5` for example.
 
-From there, go ahead and open up Emacs with that environment, for sanity, for now.
+From there, go ahead and open up Emacs with that environment, for now on.
+
+Basically, TL;DR, configuring PATH within Emacs is a pain, and it really just makes a lot sense to be in the habit of opening
+Emacs from a separate terminal, which is going to provide the environment in to Emacs from the other terminal.
 
 - Install lua-language-server from source
 
