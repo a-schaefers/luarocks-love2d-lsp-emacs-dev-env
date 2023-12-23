@@ -1,4 +1,3 @@
-rockspec_format = "3.0"
 package = "lua-starter-example"
 version = "dev-1"
 source = {
@@ -13,9 +12,7 @@ dependencies = {
    -- If you depend on other rocks, add them here
    "lume >= 2.3"
 }
--- build = {
---    type = "builtin",
---    modules = {
---       main = "main.lua"
---    }
--- }
+build = {
+   type = "builtin",
+   modules = {}
+}

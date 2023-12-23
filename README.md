@@ -41,14 +41,21 @@ Setup a lua version
 ```bash
 luver install 5.1.5
 luver use 5.1.5
+luver install luajit 2.1.ROLLING
 luver install luarocks 3.9.2
 ```
 
+Note that after installing luajit, luver requires you execute a symlink command provided by the stdout.
+
+Regarding versions, lua 5.1.x is to be preferred because that is basically where it seems luajit has ended up.
+As we're targeting the love framework, which uses luajit, there we have it.
+
 Helpful tips:
 
-```
-luver list-remote # see available lua vers
-luver list-remote luarocks # see available luarocks vers
+```bash
+luver list-remote          # see available lua versions
+luver list-remote luarocks # see available luarocks versions
+luver list-remote luajit   # see available luajit versions
 ```
 
 So, one thing I found about `luver` is it does not remember your last selection. So what you must do is
