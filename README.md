@@ -1,9 +1,12 @@
 ## luarocks-love2d-lsp-emacs-dev-env
 
-The goal of this setup is to provide the minimal skeleton to:
+In following all of these arcane steps, I am able to:
 
-- Get a lua + love project running with **per-project** managed deps by luarocks available on the PATH to both lua AND `love .`
-- Setup lua-language-server and Emacs,  working together in harmony
+1. Switch lua and luarocks versions easily
+2. Have luarocks libraries be installed **per project**, instead of per user or per system.
+3. Have CLI `lua` be able to find the luarocks project libraries
+3. Have `love .` also be able to find the luarocks project libraries
+4. Emacs / language-server-protocol is able to make use of both the luarocks project libraries and the love libraries for making solid completion options.
 
 ## SETUP
 
@@ -97,16 +100,20 @@ luarocks make
 love .
 ```
 
-- Add some library
+- A typical process to add some new library
 
 ```
+cd ~/repos/luarocks-love2d-lsp-emacs-dev-env
+luver use 5.1.5
 # From within the project root...
 luarocks install foo
 # ... update .rockspec file by hand ?!?! Luarocks is bad on this part, currently.
+emacs
+#  dev dev dev
+love . # run game
 ```
 
 Now, if `foo` were a library, both `love .` and plain `lua main.lua` will pick it up and know where to find it, in the gitignored project library paths.
-
-But at least, now we have per-project managed dependencies instead of system-wide or user-wide
+Likewise language-server-protocol is going to pick up on foo and offer foo.bar.baz types of smart completions.
 
 woof
