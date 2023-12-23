@@ -36,7 +36,7 @@ mkdir -p "${LUVER_DIR}"
 git clone https://github.com/MunifTanjim/luver.git "${LUVER_DIR}/self"
 ```
 
-Add to ~.bashrc
+Add to ~/.bashrc
 
 ```bash
 source "${LUVER_DIR}/self/luver.bash"
@@ -61,8 +61,6 @@ every time you want to work on a lua project, in the terminal first you should r
 
 From there, go ahead and open up Emacs with that environment, for sanity, it'll just inherit that choice internally,
 which should help the LSP function correctly.
-
-- lua-language-server
 
 - Install lua-language-server from source
 
