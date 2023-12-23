@@ -55,7 +55,7 @@ Emacs from a separate terminal, which is going to provide the environment in to 
 
 - Install lua-language-server from source
 
-By the way, we're going to use this hardcoded path in .luarc.json to feed it completions for the love framework.
+
 
 ```bash
 mkdir -p ~/repos
@@ -64,6 +64,8 @@ git clone https://github.com/LuaLS/lua-language-server.git
 cd lua-language-server
 ./make.sh
 ```
+
+By the way, we're going to use this hardcoded `~/repos/lua-language-server/meta/3rd/love2d/library/love` path in .luarc.json to feed it completions for the love framework. See .luarc.json - It sucks, but oh well.
 
 `.bash_profile`,
 
