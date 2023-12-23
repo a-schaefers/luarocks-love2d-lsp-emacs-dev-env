@@ -82,6 +82,8 @@ Setup terminal to run the shell as a "login shell." From here forward, open Emac
 exec "$HOME/repos/lua-language-server/bin/lua-language-server" "$@"
 ```
 
+Don't forget `chmod +x ~/bin/lua-language-server`
+
 Completely close both Emacs and the terminal. Restart emacs now from a new terminal, but don't forget to `luver use 5.1.5` in in the terminal before. Haha.
 
 - clone this repo
