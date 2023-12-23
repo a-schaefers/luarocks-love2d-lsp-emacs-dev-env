@@ -77,9 +77,9 @@ Setup terminal to run the shell as a "login shell." From here forward, open Emac
 exec "$HOME/repos/lua-language-server/bin/lua-language-server" "$@"
 ```
 
-Restart emacs now from a new terminal, now finally the dev environment PATH is going to set up the we need.
+Completely close both Emacs and the terminal. Restart emacs now from a new terminal, but don't forget to `luver use 5.1.5` in in the terminal before. Haha.
 
-- Clone this repo
+- clone this repo
 
 ```
 git clone https://github.com/a-schaefers/luarocks-love2d-lsp-emacs-dev-env.git
