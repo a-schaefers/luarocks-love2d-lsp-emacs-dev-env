@@ -65,8 +65,8 @@ exec "$HOME/repos/lua-language-server/bin/lua-language-server" "$@"
 - Clone this repo
 
 ```
-git clone ...
-cd ...
+git clone https://github.com/a-schaefers/luarocks-love2d-lsp-emacs-dev-env.git
+cd luarocks-love2d-lsp-emacs-dev-env
 luarocks init --output /dev/null
 luarocks make
 ```
