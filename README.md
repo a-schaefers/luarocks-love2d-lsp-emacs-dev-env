@@ -52,6 +52,8 @@ From there, go ahead and open up Emacs with that environment, for sanity, for no
 
 - Install lua-language-server from source
 
+By the way, we're going to use this hardcoded path in .luarc.json to feed it completions for the love framework.
+
 ```bash
 mkdir -p ~/repos
 cd ~/repos
