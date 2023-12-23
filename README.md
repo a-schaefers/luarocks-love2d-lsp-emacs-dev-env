@@ -26,24 +26,43 @@ cp ~/.emacs.d/spartan-library/spartan-lua.el ~/.emacs.d/spartan.d # Enable the s
 
 restart emacs
 
-- Add luarocks global and user-wide libs (and ~/bin ...) to PATH
+- Setup luver (lua version manager)
 
-.bash_profile
-
-```bash
-PATH="$HOME/bin:$PATH"
-eval "$(luarocks path)" # This bit here is going to get global and user-wide luarocks deps working, but not per-project.
-```
-
-Setup terminal to run the shell as a "login shell." From here forward, open Emacs from that terminal, to ensure it gets the environment settings from bash.
-
-So restart Emacs again.
-
-- Install lua luajit luarocks love
+https://github.com/MunifTanjim/luver
 
 ```bash
-apt install apt install lua luarocks luajit love # pacman should work, too, if that's your thing.
+export LUVER_DIR="${HOME}/.local/share/luver"
+mkdir -p "${LUVER_DIR}"
+git clone https://github.com/MunifTanjim/luver.git "${LUVER_DIR}/self"
 ```
+
+Add to ~.bashrc
+
+```bash
+source "${LUVER_DIR}/self/luver.bash"
+```
+
+Setup a lua version
+
+```bash
+luver install 5.1.5
+luver install luarocks 3.9.2
+```
+
+Helpful tips:
+
+```
+luver list-remote # see available lua vers
+luver list-remote luarocks # see available luarocks vers
+```
+
+So, one thing I found about `luver` is it does not remember your last selection. So what you must do is
+every time you want to work on a lua project, in the terminal first you should run: `luver use 5.1.5` for example.
+
+From there, go ahead and open up Emacs with that environment, for sanity, it'll just inherit that choice internally,
+which should help the LSP function correctly.
+
+- lua-language-server
 
 - Install lua-language-server from source
 
@@ -55,6 +74,14 @@ cd lua-language-server
 ./make.sh
 ```
 
+`.bash_profile`,
+
+```bash
+PATH="$HOME/bin:$PATH"
+```
+
+Setup terminal to run the shell as a "login shell." From here forward, open Emacs from that terminal, to ensure it gets the environment settings from bash.
+
 - Create ~/bin/lua-language-server wrapper on PATH,
 
 ```bash
@@ -62,13 +89,17 @@ cd lua-language-server
 exec "$HOME/repos/lua-language-server/bin/lua-language-server" "$@"
 ```
 
+Restart emacs now from a new terminal, now finally the dev environment PATH is going to set up the we need.
+
 - Clone this repo
 
 ```
 git clone https://github.com/a-schaefers/luarocks-love2d-lsp-emacs-dev-env.git
 cd luarocks-love2d-lsp-emacs-dev-env
-luarocks init --output /dev/null
+luarocks init --output /dev/null # trying to bootstrap an already started project is tricky, this I found, works.
 luarocks make
+
+love .
 ```
 
 - Add some library
