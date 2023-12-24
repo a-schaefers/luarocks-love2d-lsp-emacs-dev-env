@@ -8,7 +8,7 @@ description = {
    license = "MIT"
 }
 dependencies = {
-   "lua >= 5.1, < 5.4",
+   "lua >= 5.1, < 5.2",
    -- If you depend on other rocks, add them here
    "lume >= 2.3"
 }

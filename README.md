@@ -30,11 +30,18 @@ mkdir -p "${LUVER_DIR}"
 git clone https://github.com/MunifTanjim/luver.git "${LUVER_DIR}/self"
 ```
 
-Add to ~/.bashrc
+Add to ~/.bashrc AND ~/.bash_profile,
+
+We put it in both because luver and various terminals shell sourcing is janky and we don't have time for this.
 
 ```bash
+export LUVER_DIR="${LUVER_DIR:-"${XDG_DATA_HOME:-"${HOME}/.local/share"}/luver"}"
 source "${LUVER_DIR}/self/luver.bash"
+luver use 5.1.5 > /dev/null
+eval "$(luarocks path)"
 ```
+
+Close / Reopen terminal.
 
 Setup a lua version
 
