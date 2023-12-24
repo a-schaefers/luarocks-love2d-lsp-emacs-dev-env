@@ -5,7 +5,7 @@
     "workspace": {
 	"library": [
 	    "lua_modules/share/lua/5.1",
-	    "~/repos/lua-language-server/meta/3rd/love2d/library/love.lua",
+	    "~/repos/lua-language-server/meta/3rd/love2d/library",
 	    "~/repos/lua-language-server/meta/3rd/love2d/library/love"
 	],
 	"maxPreload" : 160000,

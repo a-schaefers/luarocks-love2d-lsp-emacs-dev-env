@@ -1,12 +1,5 @@
 require "set_paths"
-local lume = require("lume")
-local love = require("love")
 
--- prove a luarocks lib works
-local x = 7.77
-print(lume.round(x))
-
--- love .
 function love.load()
 end
 
