@@ -37,7 +37,6 @@ We put it in both because luver and various terminals shell sourcing is janky an
 ```bash
 export LUVER_DIR="${LUVER_DIR:-"${XDG_DATA_HOME:-"${HOME}/.local/share"}/luver"}"
 source "${LUVER_DIR}/self/luver.bash"
-luver use 5.1.5 > /dev/null
 eval "$(luarocks path)"
 ```
 
@@ -48,6 +47,7 @@ Setup a lua version
 ```bash
 luver install 5.1.5
 luver use 5.1.5
+luver alias 5.1.5 default
 luver install luajit 2.1.ROLLING
 luver install luarocks 3.9.2
 ```
@@ -65,12 +65,7 @@ luver list-remote luarocks # see available luarocks versions
 luver list-remote luajit   # see available luajit versions
 ```
 
-So, one thing I found about `luver` is it does not remember your last selection. So what you must do is
-every time you want to work on a lua project, in the terminal first you should run: `luver use 5.1.5` for example.
-
-From there, go ahead and open up Emacs with that environment, for now on.
-
-Basically, TL;DR, configuring PATH within Emacs is a pain, and it really just makes a lot sense to be in the habit of opening
+Note: Configuring PATH within Emacs is a pain, and it really just makes a lot sense to be in the habit of opening
 Emacs from a separate terminal, which is going to provide the environment in to Emacs from the other terminal.
 
 - Install lua-language-server from source
